@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>H.B.D Sukanyar</title>
+  <style>
+    html, body { height:100%; margin:0; padding:0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: url('image1/background3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    h1 {
+      margin: 20px 0 10px;
+      color: #217959 ;
+      font-size: 36px;
+    }
+    #login {
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      padding: 30px 40px;
+      max-width: 360px;
+      width: 90%;
+      margin: 0 auto 20px;
+    }
+    #login p {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #217959;
+      font-weight: bold;
+    }
+    input#pw {
+      padding: 12px 20px;
+      font-size: 16px;
+      width: 260px;
+      max-width: 90%;
+      border: 2px solid #a5d6a7;
+      border-radius: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: block;
+      margin: 0 auto 20px;
+      outline: none;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    input#pw::placeholder { color:#888; }
+    input#pw:focus {
+      border-color: #2e7d32;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cute-login-btn {
+      background-color: #a5d6a7;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 999em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background .3s, transform .2s;
+      margin: 0 auto;
+      display: block;
+      width: 120px;
+    }
+    .cute-login-btn:hover { background-color: #81c784; transform: scale(1.05); }
+    .cute-login-btn:active { transform: scale(0.95); }
+    .puff-heart {
+      position:absolute; font-size:100px; color:#2e7d32;
+      opacity:0; pointer-events:none;
+      animation:heart-puff 1s ease-out forwards;
+    }
+    @keyframes heart-puff {
+      0% { transform: scale(0); opacity:1; }
+      50% { transform: scale(1.5); opacity:0.8; }
+      100% { transform: scale(2); opacity:0; }
+    }
+   .carousel-container {
+  display: none;
+  margin: 20px auto;
+  max-width: 800px;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 30px 40px;
+  color: #2e7d32;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-align: center;
+  border: 3px solid #a5d6a7;
+}
+    
+    .blessing {
+      margin-top:40px;
+      font-size:18px;
+    color: #47dd90; /* สีเขียว */
+      text-shadow:1px 1px 2px rgba(0,0,0,0.7);
+      line-height:1.4;
+    }
+    .slide-wrapper {
+      position:relative; height:400px; overflow:hidden;
+    }
+    .slide-wrapper img {
+      display:none; position:absolute; top:0; left:50%;
+      transform:translateX(-50%);
+      height:100%;
+      border:8px solid #fff;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+      border-radius:8px;
+      object-fit:cover;
+    }
+    .slide-wrapper img.active { display:block; }
+    .nav {
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(255,255,255,0.7);
+      border:none; font-size:32px; padding:0 12px;
+      cursor:pointer; border-radius:50%; color:#333;
+      transition:background .3s; z-index:1;
+    }
+    .nav:hover { background:rgba(255,255,255,0.9); }
+    .prev { left:10px; }
+    .next { right:10px; }
+  </style>
+</head>
+<body>
+  <h1>🎀 H.B.D Sukanyar 🎀</h1>
+  <div id="login">
+    <p>🐶 Welcome 🐱</p>
+    <input type="password" id="pw" placeholder="password" />
+    <button class="cute-login-btn" onclick="checkPw()">💚</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="gallery" class="carousel-container">
+    <h2>🎉 Happy Birthday 🎉</h2>
+    <p class="blessing">
+      ขอให้หนูมีความสุขนะครับ<br>
+      ทำอะไรก็ราบรื่น ไม่เจ็บไม่ป่วย<br>
+      พี่เป็นกำลังใจให้หนูตลอดนะครับ<br>
+      อวยพรไม่เก่ง แต่อยากเห็นหนูยิ้มทุกวันนะ
+    </p>
+    <div class="slide-wrapper">
+      <img src="image1/image1.jpg" class="active" alt="รูปที่1">
+      <img src="image1/image2.jpg" alt="รูปที่2">
+      <img src="image1/image3.jpg" alt="รูปที่3">
+      <img src="image1/image4.jpg" alt="รูปที่4">
+      <img src="image1/image5.jpg" alt="รูปที่5">
+      <img src="image1/image6.jpg" alt="รูปที่6">
+      <img src="image1/image7.jpg" alt="รูปที่7">
+      <img src="image1/image8.jpg" alt="รูปที่8">
+      <img src="image1/image9.jpg" alt="รูปที่9">
+      <img src="image1/image10.jpg" alt="รูปที่10">
+      <img src="image1/image11.jpg" alt="รูปที่11">
+      <img src="image1/image12.jpg" alt="รูปที่12">
+      <img src="image1/image13.jpg" alt="รูปที่13">
+      <img src="image1/image14.jpg" alt="รูปที่14">
+      <img src="image1/image15.jpg" alt="รูปที่15">
+      <img src="image1/image16.jpg" alt="รูปที่16">
+      <img src="image1/image17.jpg" alt="รูปที่17">
+      <img src="image1/image18.jpg" alt="รูปที่18">
+      <img src="image1/image19.jpg" alt="รูปที่19">
+      <img src="image1/image20.jpg" alt="รูปที่20">
+      <img src="image1/image21.jpg" alt="รูปที่21">
+      <img src="image1/image22.jpg" alt="รูปที่22">
+      <img src="image1/image23.jpg" alt="รูปที่23">
+      <img src="image1/image24.jpg" alt="รูปที่24">
+      <img src="image1/image25.jpg" alt="รูปที่25">
+      <img src="image1/image26.jpg" alt="รูปที่26">
+      <img src="image1/image27.jpg" alt="รูปที่27">
+      <button class="nav prev" onclick="changeSlide(-1)">‹</button>
+      <button class="nav next" onclick="changeSlide(1)">›</button>
+    </div>
+  </div>
+
+  <script>
+    function checkPw() {
+      const pw = document.getElementById('pw').value;
+      if (pw === '14072543') {
+        document.getElementById('login').style.display = 'none';
+
+        // แสดงอนิเมชันหัวใจ
+        for (let i = 0; i < 8; i++) {
+          const h = document.createElement('div');
+          h.className = 'puff-heart';
+          h.textContent = '💚';
+          h.style.left = Math.random()*100 + '%';
+          h.style.top = Math.random()*100 + '%';
+          h.style.animationDelay = `${i*0.15}s`;
+          document.body.appendChild(h);
+          h.addEventListener('animationend', ()=>h.remove());
+        }
+
+        // แสดงแกลเลอรี
+        document.querySelector('.carousel-container').style.display = 'block';
+      } else {
+        document.getElementById('error').textContent = 'รหัสผ่านไม่ถูกต้อง';
+      }
+    }
+
+    let currentIndex = 0;
+    const imgs = document.querySelectorAll('.slide-wrapper img');
+    function changeSlide(dir) {
+      imgs[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + dir + imgs.length) % imgs.length;
+      imgs[currentIndex].classList.add('active');
+    }
+  </script>
+</body>
+</html>
